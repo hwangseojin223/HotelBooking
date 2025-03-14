@@ -11,7 +11,7 @@ public Customer(String name, String phoneNumber, String roomType) {
 	this.name = name;
 	this.phoneNumber = phoneNumber;
 	this.roomType = roomType;
-	this.room
+	
 }
   
   
