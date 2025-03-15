@@ -55,13 +55,21 @@ public class Manager{
         int personNumber = sc.nextInt();
 
         int FixRoomNumber = roomNumber % 10-1;
-        if(arr[FixRoomNumber][day-1] == 0){
+        if(arr[FixRoomNumber][day-1] == 0){ //비어있는 방이면 예약 완료
             arr[FixRoomNumber][day-1] = -1;
+
+
             System.out.println("예약이 완료되었습니다");
+            //예약번호 출력
+            String reservationNum = phoneNumber + roomNuber;
+            System.out.println("예약번호:"+reservationNum);
+
+            Customer customer = new Customer(name, phoneNumber, roomType, roomNuber, day, personNumber);
+            
         } 
         //arr[호수][날짜] 
 
-        else if(arr[FixRoomNumber][day-1] == -1){
+        else if(arr[FixRoomNumber][day-1] == -1){ //비어있지 않으면 빈 방 호수 출력
             System.out.println("예약이 불가능합니다.");
             if (roomType.equals("스탠다드룸")){
                 for(int i=0; i<5; i++){
@@ -81,10 +89,14 @@ public class Manager{
     }
 
     public void cancel(){
+        //예약번호 받음
+        //해당 방 빈 방 처리
+
 
     }
 
     public void checkout(){
+        // 빈 방 처리
 
     }
 }
