@@ -59,19 +59,22 @@ public class Manager{
             arr[FixRoomNumber][day-1] = -1;
             System.out.println("예약이 완료되었습니다");
         } 
+        //arr[호수][날짜] 
 
         else if(arr[FixRoomNumber][day-1] == -1){
             System.out.println("예약이 불가능합니다.");
             if (roomType.equals("스탠다드룸")){
                 for(int i=0; i<5; i++){
-                    System.out.println("예약이 불가능합니다.");
-                    if(arr[i][day-1]==0)
+                    if(arr[i][day-1]==0) System.out.println((i+101)+"호 예약 가능");
+                }
+            }
+            else if(roomType.equals("스위트룸")){
+                for(int i=5; i<9; i++){
+                    if(arr[i][day-1]==0) System.out.println((i+101)+"호 예약 가능");
                 }
             }
 
         }
-
-
 
 
 
