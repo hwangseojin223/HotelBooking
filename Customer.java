@@ -29,26 +29,3 @@ public class Customer {
 		this.roomNumber = roomNumber;
 	}
 }
-<<<<<<< HEAD
-  
- public String getRoomType() {
-	return roomType;
-}
-
-public void setRoomType(String roomType) {
-	this.roomType = roomType;
-}
-
-public int getRoomNumber() {
-	return roomNumber;
-}
-
-public void setRoomNumber(int roomNumber) {
-	this.roomNumber = roomNumber;
-}
-
-  
-}
-=======
-
->>>>>>> 210f42c667d98486faa4fd211a9ca10dc8b0f753
