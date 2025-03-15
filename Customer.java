@@ -18,6 +18,15 @@ public class Customer {
 		this.day = day;
 		this.personNumber = personNumber;	
 	}
+
+	public void show(){
+		System.out.println("***예약 내용***");
+		System.out.println("예약자 이름: " + getName());
+		System.out.println("예약자 전화번호: " + getPhoneNumber());
+		System.out.println("예약한 방 타입: " + getRoomType());
+		System.out.println("예약한 날짜: " + getDay());
+		System.out.println("예약 인원: " + getPersonNumber());
+	}
 	
 	public String getName() {
 		return name;
@@ -66,4 +75,5 @@ public class Customer {
 	public void setPersonNumber(String personNumber) {
 		this.personNumber = personNumber;
 	}
+
 }
