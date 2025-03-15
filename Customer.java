@@ -65,5 +65,5 @@ public class Customer {
 	
 	public void setpersonNumber(String personNumber) {
 		this.personNumber = personNumber;
-	}
+}
 }
