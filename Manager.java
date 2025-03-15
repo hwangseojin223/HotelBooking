@@ -95,12 +95,12 @@ public class Manager{
 
         //예약번호(전화번호+일자+객실번호)에서 객실번호와 일자 추출
         int phoneNumberLength = phoneNumber.length();
-        int dayLength = Integer.toString(day).length();
-        int cancelDay = Integer.parseInt(reservationNum.substring(phoneNumberLength,reservationNum.length()-3));
-        int roomNum = Integer.parseInt(reservationNum.substring(phoneNumber+dayLength));
+        int dayLength = reservationNum.length() - phoneNumberLength - 3;
+        int cancelDay = Integer.parseInt(reservationNum.substring(phoneNumberLength,phoneNumberLength + dayLength));
+        int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
 
         int FixRoomNum = roomNum %10-1;
-        arr[FixRoomNum][cancelDay-1] = 0;
+        arr[FixRoomNum][cancelDay-1] = null;
 
         System.out.println("예약번호" + reservationNum + "의 취소가 완료되었습니다.");
 
@@ -113,13 +113,13 @@ public class Manager{
 
         //예약번호(전화번호+일자+객실번호)에서 객실번호와 일자 추출
         int phoneNumberLength = phoneNumber.length();
-        int dayLength = Integer.toString(day).length();
-        int cancelDay = Integer.parseInt(reservationNum.substring(phoneNumberLength,reservationNum.length()-3));
-        int roomNum = Integer.parseInt(reservationNum.substring(phoneNumber+dayLength));
+        int dayLength = reservationNum.length() - phoneNumberLength - 3;
+        int cancelDay = Integer.parseInt(reservationNum.substring(phoneNumberLength,phoneNumberLength + dayLength));
+        int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
 
         int FixRoomNum = roomNum %10-1;
-        Room r = arr[FixRoomNum][cancelDay-1]
-        arr[FixRoomNum][cancelDay-1] = 0;
+        Room r = arr[FixRoomNum][cancelDay-1];
+        arr[FixRoomNum][cancelDay-1] = null;
 
         System.out.println("예약번호" + reservationNum + "의 체크아웃이 완료되었습니다.");
         r.showPrice();
