@@ -1,3 +1,12 @@
+  public class Customer {
+  private String name;
+  private String phoneNumber;
+  private String roomType;
+  private int roomNumber;
+  private String day;
+  private String personNumber;
+  
+  
   public Customer() {}
 
 	public Customer(String name, String phoneNumber, String roomType, int roomNuber, String day, String personNumber) {
@@ -56,4 +65,4 @@
 	public void setpersonNumber(String personNumber) {
 		this.personNumber = personNumber;
 }
-
+}
