@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         
         while(true){
-            System.err.println("1.예약하기 2.예약취소 3.예약대기");
+            System.err.println("1.예약하기 2.예약취소 3.checkout");
             int menu = sc.nextInt();
             switch (menu) {
                 case 1 :
