@@ -9,7 +9,7 @@ public class Customer {
 	
 	public Customer() {}
 
-	public Customer(String name, String phoneNumber, String roomType, int roomNuber, String day, String personNumber) {
+	public Customer(String name, String phoneNumber, String roomType, int roomNumber, String day, String personNumber) {
 		super();
 		this.name = name;
 		this.phoneNumber = phoneNumber;
@@ -50,7 +50,7 @@ public class Customer {
 	public void setRoomNumber(int roomNumber) {
 		this.roomNumber = roomNumber;
 	}
-	
+
 	public String getDay() {
 		return day;
 	}
@@ -59,11 +59,11 @@ public class Customer {
 		this.day = day;
 	}
 
-	public String getpersonNumber() {
+	public String getPersonNumber() {
 		return personNumber;
 	}
 	
-	public void setpersonNumber(String personNumber) {
+	public void setPersonNumber(String personNumber) {
 		this.personNumber = personNumber;
-}
+	}
 }
