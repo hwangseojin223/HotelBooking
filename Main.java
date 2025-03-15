@@ -16,7 +16,7 @@ public class Main {
                     m.reservation();
                     break;
                 case 2:
-                m.cancel();
+                    m.cancel();
                     break;
                 case 3:
                     m.checkout();

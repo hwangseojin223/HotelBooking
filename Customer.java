@@ -9,7 +9,7 @@ public class Customer {
 	
 	public Customer() {}
 
-	public Customer(String name, String phoneNumber, String roomType, int roomNuber, String day, String personNumber) {
+	public Customer(String name, String phoneNumber, String roomType, int roomNumber, String day, String personNumber) {
 		super();
 		this.name = name;
 		this.phoneNumber = phoneNumber;
@@ -17,6 +17,15 @@ public class Customer {
 		this.roomNumber = roomNumber;
 		this.day = day;
 		this.personNumber = personNumber;	
+	}
+
+	public void show(){
+		System.out.println("***예약 내용***");
+		System.out.println("예약자 이름: " + getName());
+		System.out.println("예약자 전화번호: " + getPhoneNumber());
+		System.out.println("예약한 방 타입: " + getRoomType());
+		System.out.println("예약한 날짜: " + getDay());
+		System.out.println("예약 인원: " + getPersonNumber());
 	}
 	
 	public String getName() {
@@ -50,7 +59,7 @@ public class Customer {
 	public void setRoomNumber(int roomNumber) {
 		this.roomNumber = roomNumber;
 	}
-	
+
 	public String getDay() {
 		return day;
 	}
@@ -59,11 +68,12 @@ public class Customer {
 		this.day = day;
 	}
 
-	public String getpersonNumber() {
+	public String getPersonNumber() {
 		return personNumber;
 	}
 	
-	public void setpersonNumber(String personNumber) {
+	public void setPersonNumber(String personNumber) {
 		this.personNumber = personNumber;
-}
+	}
+
 }
