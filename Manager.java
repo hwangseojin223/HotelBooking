@@ -6,6 +6,7 @@ public class Manager{
 
     public Manager(){
         arr = new Room[9][31];
+        arr = 0;
     }
 
     Scanner sc = new Scanner(System.in);
@@ -47,11 +48,32 @@ public class Manager{
             }   
         }
 
+        System.out.print("예약일자를 입력하세요: ");
+        int day = sc.nextInt();
+        
+        System.out.print("예약인원을 입력하세요: ");
+        int personNumber = sc.nextInt();
+
+        int FixRoomNumber = roomNumber % 10-1;
+        if(arr[FixRoomNumber][day-1] == 0){
+            arr[FixRoomNumber][day-1] = -1;
+            System.out.println("예약이 완료되었습니다");
+        } 
+
+        else if(arr[FixRoomNumber][day-1] == -1){
+            System.out.println("예약이 불가능합니다.");
+            if (roomType.equals("스탠다드룸")){
+                for(int i=0; i<5; i++){
+                    System.out.println("예약이 불가능합니다.");
+                    if(arr[i][day-1]==0)
+                }
+            }
+
+        }
 
 
-    
-        //System.out.print("객실 번호을 입력하세요(101~109)");
-        String roomType = sc.nextLine();
+
+
 
     }
 
