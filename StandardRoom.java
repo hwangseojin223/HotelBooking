@@ -7,7 +7,7 @@ public class StandardRoom extends Room {
 
     public StandardRoom(Customer customer) {
         super(customer);
-        this.peopleNo  = Integer.parseInt(customer.getpersonNumber());
+        this.peopleNo  = customer.getPersonNumber();
     }
 
     @Override

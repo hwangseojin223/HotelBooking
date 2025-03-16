@@ -6,7 +6,7 @@ public class SuiteRoom extends Room{
 
     public SuiteRoom(Customer customer){
         super(customer);
-        this.peopleNo = Integer.parseInt(customer.getpersonNumber());
+        this.peopleNo = customer.getPersonNumber();
     }
 
     @Override
