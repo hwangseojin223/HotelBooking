@@ -20,7 +20,7 @@ public class Customer {
 	}
 
 	public void show(){
-		System.out.println("***예약 내용***");
+		System.out.println("\n***예약 내용***");
 		System.out.println("예약자 이름: " + getName());
 		System.out.println("예약자 전화번호: " + getPhoneNumber());
 		System.out.println("예약한 방 타입: " + getRoomType());
