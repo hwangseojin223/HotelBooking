@@ -11,15 +11,18 @@ public class Manager{
     Scanner sc = new Scanner(System.in);
 
     public void reservation(){
-       
         System.out.print("이름을 입력하세요: ");
         String name = sc.nextLine();
         System.out.print("전화번호를 입력하세요: ");
         String phoneNumber = sc.nextLine();
 
+        String roomType;
+        int roomNumber;
+
+        // 객실 타입 입력
         do{
             System.out.print("객실 타입을 입력하세요(스탠다드룸, 스위트룸)");
-            String roomType = sc.nextLine();
+            roomType = sc.nextLine();
             if (roomType.equals("스탠다드룸") || roomType.equals("스위트룸")) break;
             else System.out.print("잘못된 객실 타입입니다."); 
 
@@ -30,7 +33,7 @@ public class Manager{
                 System.out.print("객실 번호를 입력하세요(101~105)");
                 int min = 101;
                 int max = 105;
-                int roomNumber = sc.nextInt();
+                roomNumber = Integer.parseInt(sc.nextLine());
 
                 if((roomNumber>=min)&&(roomNumber<=max)) break;
                 else System.out.print("101~105 사이로 입력하세요");
@@ -41,7 +44,7 @@ public class Manager{
                 System.out.print("객실 번호를 입력하세요(106~109)");
                 int min = 106;
                 int max = 109;
-                int roomNumber = sc.nextInt();
+                roomNumber = Integer.parseInt(sc.nextLine());
 
                 if((roomNumber>=min)&&(roomNumber<=max)) break;
                 else System.out.print("106~109 사이로 입력하세요");
@@ -49,10 +52,10 @@ public class Manager{
         }
 
         System.out.print("예약일자를 입력하세요: ");
-        int day = sc.nextInt();
+        int day = Integer.parseInt(sc.nextLine());
         
         System.out.print("예약인원을 입력하세요: ");
-        int personNumber = sc.nextInt();
+        int personNumber = Integer.parseInt(sc.nextLine());
 
         int FixRoomNumber = roomNumber -101;
         if(arr[FixRoomNumber][day-1] == null){ //비어있는 방이면 예약 완료
@@ -65,7 +68,8 @@ public class Manager{
             String reservationNum = phoneNumber + day + roomNumber;
             System.out.println("예약번호:"+reservationNum);
 
-            Customer customer = new Customer(name, phoneNumber, roomType, roomNuber, day, personNumber);
+            Customer customer = new Customer(name, phoneNumber, roomType, roomNumber, day, personNumber);
+            customer.show();
         } 
         //arr[호수][날짜] 
 
@@ -83,20 +87,23 @@ public class Manager{
             }
 
         }
+    }
 
 
     public void cancel(){
         //예약번호 받음
         //해당 방 빈 방 처리
         System.out.print("예약번호를 입력하세요:");
-        String reservationNum = sc.nextLine;
+        String reservationNum = sc.nextLine();
 
-        //예약번호(전화번호+일자+객실번호)에서 객실번호와 일자 추출
-        int phoneNumberLength = phoneNumber.length();
-        int dayLength = reservationNum.length() - phoneNumberLength - 3;
-        int cancelDay = Integer.parseInt(reservationNum.substring(phoneNumberLength,phoneNumberLength + dayLength));
+        //예약번호(전화번호8+일자2+객실번호3)에서 객실번호와 일자 추출
+        // int phoneNumberLength = phoneNumber.length();
+        // int dayLength = reservationNum.length() - phoneNumberLength - 3;
+        // int cancelDay = Integer.parseInt(reservationNum.substring(phoneNumberLength,phoneNumberLength + dayLength));
+        // int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
+
         int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
-
+        int cancelDay = Integer.parseInt(reservationNum.substring(8,10));
         int FixRoomNum = roomNum -101;
         arr[FixRoomNum][cancelDay-1] = null;
 
@@ -106,24 +113,24 @@ public class Manager{
     }
 
     public void checkout(){
-         System.out.print("예약번호를 입력하세요:");
-        String reservationNum = sc.nextLine;
+        System.out.print("예약번호를 입력하세요:");
+        String reservationNum = sc.nextLine();
 
         //예약번호(전화번호+일자+객실번호)에서 객실번호와 일자 추출
-        int phoneNumberLength = phoneNumber.length();
-        int dayLength = reservationNum.length() - phoneNumberLength - 3;
+        // int phoneNumberLength = phoneNumber.length();
+        int phoneNumberLength = 8;
+        int dayLength = 2;
+        // int dayLength = reservationNum.length() - phoneNumberLength - 3;
         int cancelDay = Integer.parseInt(reservationNum.substring(phoneNumberLength,phoneNumberLength + dayLength));
         int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
 
-        int FixRoomNum = roomNum -101;
+        int FixRoomNum = roomNum - 101;
+
         Room r = arr[FixRoomNum][cancelDay-1];
         arr[FixRoomNum][cancelDay-1] = null;
 
         System.out.println("예약번호" + reservationNum + "의 체크아웃이 완료되었습니다.");
         r.showPrice();
-
-        
-
     }
-}
+
 }
