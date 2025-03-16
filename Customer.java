@@ -3,13 +3,13 @@ public class Customer {
 	private String phoneNumber;
 	private String roomType;
 	private int roomNumber;
-	private String day;
-	private String personNumber;
+	private int day;
+	private int personNumber;
 	
 	
 	public Customer() {}
 
-	public Customer(String name, String phoneNumber, String roomType, int roomNumber, String day, String personNumber) {
+	public Customer(String name, String phoneNumber, String roomType, int roomNumber, int day, int personNumber) {
 		super();
 		this.name = name;
 		this.phoneNumber = phoneNumber;
@@ -60,19 +60,19 @@ public class Customer {
 		this.roomNumber = roomNumber;
 	}
 
-	public String getDay() {
+	public int getDay() {
 		return day;
 	}
 	
-	public void setDay(String day) {
+	public void setDay(int day) {
 		this.day = day;
 	}
 
-	public String getPersonNumber() {
+	public int getPersonNumber() {
 		return personNumber;
 	}
 	
-	public void setPersonNumber(String personNumber) {
+	public void setPersonNumber(int personNumber) {
 		this.personNumber = personNumber;
 	}
 
