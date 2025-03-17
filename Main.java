@@ -8,7 +8,7 @@ public class Main {
 
         
         while(true){
-            System.out.println("\n1.예약하기 2.예약취소 3.checkout 4.저장하기 5.불러오기 6.종료);
+            System.out.println("\n1.예약하기 2.예약취소 3.checkout 4.저장하기 5.불러오기 6.종료");
             System.out.print("메뉴 선택: ");
             int menu = sc.nextInt();
             switch (menu) {
