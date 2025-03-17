@@ -3,6 +3,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+import java.io.*;
 
 public class Manager{
     private Room arr[][];
@@ -221,10 +222,12 @@ public class Manager{
         } catch (Exception e) {
             e.printStackTrace();
         }finally{
-            try {
-                ois.close();
-            } catch (Exception e) {
-
+           if (ois != null) {
+                try {
+                    ois.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
