@@ -1,5 +1,6 @@
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
-import java.io.FileInputStream;
 
 public class Manager{
     private Room arr[][];
@@ -160,7 +161,7 @@ public class Manager{
     }
 
     public void save(){
-        ObjectOuputStream oos = null;
+        ObjectOutputStream oos = null;
         try{
             oos = new ObjectOutputStream(new FileOutputStream("room.txt"));
             oos.writeObject(arr);
@@ -174,7 +175,6 @@ public class Manager{
                 }
             }
         }
-
     }
 
     public void load(){
