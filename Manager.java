@@ -130,6 +130,8 @@ public class Manager{
         System.out.print("예약번호를 입력하세요:");
         String reservationNum = sc.nextLine();
 
+    try{
+
         //예약번호(전화번호8+일자2+객실번호3)에서 객실번호와 일자 추출
         int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
         int cancelDay = Integer.parseInt(reservationNum.substring(8,10));
@@ -148,6 +150,14 @@ public class Manager{
         arr[FixRoomNum][cancelDay-1] = null;
 
         System.out.println("예약번호" + reservationNum + "의 취소가 완료되었습니다.");
+
+    }catch (NumberFormatException e) {
+    	System.out.println("올바른 예약번호를 입력하세요.");
+	}catch (Exception e) {
+		System.out.println("올바른 예약번호를 입력하세요.");
+	}
+
+        
     }
 
     public void checkout(){
