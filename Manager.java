@@ -221,10 +221,12 @@ public class Manager{
         } catch (Exception e) {
             e.printStackTrace();
         }finally{
-            try {
-                ois.close();
-            } catch (Exception e) {
-
+           if (ois != null) {
+                try {
+                    ois.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
