@@ -8,7 +8,7 @@ public class Main {
 
         
         while(true){
-            System.err.println("\n1.예약하기 2.예약취소 3.checkout");
+            System.err.println("\n1.예약하기 2.예약취소 3.checkout 4.저장 5.로드");
             System.out.println("메뉴선택: ");
             int menu = sc.nextInt();
             switch (menu) {
@@ -20,6 +20,12 @@ public class Main {
                     break;
                 case 3:
                     m.checkout();
+                    break;
+                case 4:
+                    m.save();
+                    break;
+                case 5:
+                    m.load();
                     break;
             }
         }

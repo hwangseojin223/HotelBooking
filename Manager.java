@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.FileInputStream;
 
 public class Manager{
     private Room arr[][];
@@ -126,11 +127,6 @@ public class Manager{
         String reservationNum = sc.nextLine();
 
         //예약번호(전화번호8+일자2+객실번호3)에서 객실번호와 일자 추출
-        // int phoneNumberLength = phoneNumber.length();
-        // int dayLength = reservationNum.length() - phoneNumberLength - 3;
-        // int cancelDay = Integer.parseInt(reservationNum.substring(phoneNumberLength,phoneNumberLength + dayLength));
-        // int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
-
         int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
         int cancelDay = Integer.parseInt(reservationNum.substring(8,10));
         int FixRoomNum = roomNum - 101;
@@ -164,6 +160,28 @@ public class Manager{
         else System.out.println("존재하지 않는 예약번호입니다.");
 
         
+    }
+
+    public void save(){
+        ObjectOuputStream oos = null;
+        try{
+            oos = new ObjectOutputStream(new FileOutputStream("room.txt"));
+            oos.writeObject(arr);
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            if(oos != null){
+                try {
+                    oos.close();
+                } catch (Exception e) {
+                }
+            }
+        }
+
+    }
+
+    public void load(){
+
     }
 
 }
