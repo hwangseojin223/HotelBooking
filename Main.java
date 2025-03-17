@@ -8,7 +8,7 @@ public class Main {
 
         
         while(true){
-            System.out.println("\n1.�����ϱ� 2.������� 3.checkout 4.�����ϱ� 5.�ҷ����� 6.����");
+            System.out.println("\n1.예약하기 2.예약취소 3.checkout 4.저장하기 5.불러오기 6.종료);
             System.out.print("�޴�����: ");
             int menu = sc.nextInt();
             switch (menu) {
@@ -28,7 +28,7 @@ public class Main {
                     m.load();
                     break;
                 case 6:
-                    System.out.println("���α׷� ����");
+                    System.out.println("프로그램 종료");
                     return;
             }
         }
