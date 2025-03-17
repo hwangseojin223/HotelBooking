@@ -16,4 +16,17 @@ public class StandardRoom extends Room {
     public void showPrice(){
         System.out.println("StandardRoom price : " + price + "원");
     }
+
+    @Override
+    public void show(){
+        System.out.print();
+    }
+
+    public int getPeopleNo(){
+        return peopleNo;
+    }
+
+    public void setPeopleNo(){
+        this.peopleNo = peopleNo;
+    }
 }

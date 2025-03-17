@@ -10,5 +10,7 @@ public class  Room implements Serializable {
     }
     
     public void showPrice(){};
+
+    public void show(){};
     
 }

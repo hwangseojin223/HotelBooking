@@ -16,4 +16,12 @@ public class SuiteRoom extends Room{
     public void showPrice(){
         System.out.println("SuiteRoom price : " + price + "원");
     }
+
+    public int getPeopleNo(){
+        return peopleNo;
+    }
+
+    public void setPeopleNo(){
+        this.peopleNo = peopleNo;
+    }
 }
