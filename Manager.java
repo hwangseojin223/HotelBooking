@@ -155,8 +155,6 @@ public class Manager{
     	System.out.println("올바른 예약번호를 입력하세요.");
 	}catch (Exception e) {
 		System.out.println("올바른 예약번호를 입력하세요.");
-	}catch (StringIndexOutOfBoundsException e) {
-		System.out.println("올바른 예약번호를 입력하세요.");
 	}
 
         
