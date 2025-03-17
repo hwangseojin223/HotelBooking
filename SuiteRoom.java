@@ -17,6 +17,11 @@ public class SuiteRoom extends Room{
         System.out.println("SuiteRoom price : " + price + "원");
     }
 
+    @Override
+    public void show() {
+        System.out.println("예약자: " + customer.getName() + ", 전화번호: " + customer.getPhoneNumber() + ", 예약일자: " + customer.getDay() + "일, 인원수: " + customer.getPersonNumber());
+    }
+
     public int getPeopleNo(){
         return peopleNo;
     }

@@ -198,6 +198,7 @@ public class Manager{
                 try {
                     oos.close();
                 } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         }
@@ -208,7 +209,15 @@ public class Manager{
         try {
             ois = new ObjectInputStream(new FileInputStream("room.txt"));
             arr = (Room[][]) ois.readObject(); 
-            //////////////수정
+
+            System.out.println("저장된 예약 내용:");
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = 0; j < arr[i].length; j++) {
+                    if (arr[i][j] != null) {
+                        arr[i][j].show();  // 예약된 객실이 있으면 show() 메서드를 호출하여 정보 출력
+                    }
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }finally{
