@@ -52,7 +52,7 @@ public class Manager{
                 roomNumber = Integer.parseInt(sc.nextLine());
 
                 if((roomNumber>=min)&&(roomNumber<=max)) break;
-                else System.out.print("106~109 사이로 입력하세요");
+                else System.out.println("106~109 사이로 입력하세요");
             }   
         }
 
