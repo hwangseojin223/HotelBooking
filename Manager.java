@@ -126,11 +126,6 @@ public class Manager{
         String reservationNum = sc.nextLine();
 
         //예약번호(전화번호8+일자2+객실번호3)에서 객실번호와 일자 추출
-        // int phoneNumberLength = phoneNumber.length();
-        // int dayLength = reservationNum.length() - phoneNumberLength - 3;
-        // int cancelDay = Integer.parseInt(reservationNum.substring(phoneNumberLength,phoneNumberLength + dayLength));
-        // int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
-
         int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
         int cancelDay = Integer.parseInt(reservationNum.substring(8,10));
         int FixRoomNum = roomNum - 101;
