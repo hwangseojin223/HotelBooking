@@ -130,6 +130,17 @@ public class Manager{
         int roomNum = Integer.parseInt(reservationNum.substring(reservationNum.length() - 3));
         int cancelDay = Integer.parseInt(reservationNum.substring(8,10));
         int FixRoomNum = roomNum - 101;
+
+        if(arr[FixRoomNum][cancelDay-1] == null){
+            System.out.println("존재하지 않는 예약번호입니다.");
+            return;
+        }
+
+        if (FixRoomNum < 0 || FixRoomNum >= arr.length || cancelDay < 1 || cancelDay > 31) {
+        System.out.println("유효하지 않은 예약번호입니다.");
+        return;
+    }
+
         arr[FixRoomNum][cancelDay-1] = null;
 
         System.out.println("예약번호" + reservationNum + "의 취소가 완료되었습니다.");
@@ -150,16 +161,16 @@ public class Manager{
         Room r = arr[FixRoomNum][cancelDay-1];
         if (r instanceof StandardRoom){
             ((StandardRoom) r).showPrice();
-            arr[FixRoomNum][cancelDay-1] = null;
-        System.out.println("예약번호" + reservationNum + "의 체크아웃이 완료되었습니다.");
         } else if (r instanceof SuiteRoom){
             ((SuiteRoom) r).showPrice();
-            arr[FixRoomNum][cancelDay-1] = null;
-        System.out.println("예약번호" + reservationNum + "의 체크아웃이 완료되었습니다.");
         }
-        else System.out.println("존재하지 않는 예약번호입니다.");
+        else {
+            System.out.println("존재하지 않는 예약번호입니다.");
+            return;
+        }
+        arr[FixRoomNum][cancelDay-1] = null;
+        System.out.println("예약번호" + reservationNum + "의 체크아웃이 완료되었습니다.");
 
-        
     }
 
     public void save(){
