@@ -1,8 +1,8 @@
 import java.io.Serializable;
 
 public class  Room implements Serializable {
-    protected int price;
-    protected Customer customer; 
+    public int price;
+    public Customer customer; 
     
     public Room(){}
 

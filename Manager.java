@@ -3,6 +3,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
+import java.io.*;
 
 public class Manager{
     private Room arr[][];
@@ -40,7 +41,7 @@ public class Manager{
                 roomNumber = Integer.parseInt(sc.nextLine());
 
                 if((roomNumber>=min)&&(roomNumber<=max)) break;
-                else System.out.print("101~105 사이로 입력하세요");
+                else System.out.println("101~105 사이로 입력하세요");
             }   
         }
         else if(roomType.equals("스위트룸")){
@@ -51,7 +52,7 @@ public class Manager{
                 roomNumber = Integer.parseInt(sc.nextLine());
 
                 if((roomNumber>=min)&&(roomNumber<=max)) break;
-                else System.out.print("106~109 사이로 입력하세요");
+                else System.out.println("106~109 사이로 입력하세요");
             }   
         }
 
@@ -221,10 +222,12 @@ public class Manager{
         } catch (Exception e) {
             e.printStackTrace();
         }finally{
-            try {
-                ois.close();
-            } catch (Exception e) {
-
+           if (ois != null) {
+                try {
+                    ois.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
