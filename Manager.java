@@ -151,13 +151,16 @@ public class Manager{
         Room r = arr[FixRoomNum][cancelDay-1];
         if (r instanceof StandardRoom){
             ((StandardRoom) r).showPrice();
+            arr[FixRoomNum][cancelDay-1] = null;
+        System.out.println("예약번호" + reservationNum + "의 체크아웃이 완료되었습니다.");
         } else if (r instanceof SuiteRoom){
             ((SuiteRoom) r).showPrice();
-        }
-
-        arr[FixRoomNum][cancelDay-1] = null;
-
+            arr[FixRoomNum][cancelDay-1] = null;
         System.out.println("예약번호" + reservationNum + "의 체크아웃이 완료되었습니다.");
+        }
+        else System.out.println("존재하지 않는 예약번호입니다.");
+
+        
     }
 
     public void save(){
