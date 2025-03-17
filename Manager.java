@@ -158,4 +158,12 @@ public class Manager{
         System.out.println("예약번호" + reservationNum + "의 체크아웃이 완료되었습니다.");
     }
 
+    public void save(){
+
+    }
+
+    public void load(){
+
+    }
+
 }
