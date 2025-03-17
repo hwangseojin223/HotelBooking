@@ -1,5 +1,8 @@
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Manager{
@@ -181,7 +184,26 @@ public class Manager{
     }
 
     public void load(){
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream("room.txt"));
+            ArrayList<Room>loadArr = (ArrayList<Room>) ois.readObject();
+            for(Room r : loadArr){
+                if (r instanceof StandardRoom){
 
+                }else if (r instanceof SuiteRoom){
+
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            try {
+                ois.close();
+            } catch (Exception e) {
+
+            }
+        }
     }
 
 }
