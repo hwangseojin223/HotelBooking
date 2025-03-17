@@ -8,8 +8,8 @@ public class Main {
 
         
         while(true){
-            System.out.println("\n1.¿¹¾àÇÏ±â 2.¿¹¾àÃë¼Ò 3.checkout 4.ÀúÀåÇÏ±â 5.ºÒ·¯¿À±â 6.Á¾·á");
-            System.out.println("¸Þ´º¼±ÅÃ: ");
+            System.out.println("\n1.ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ 2.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3.checkout 4.ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ 5.ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ 6.ï¿½ï¿½ï¿½ï¿½");
+            System.out.print("ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½: ");
             int menu = sc.nextInt();
             switch (menu) {
                 case 1 :
@@ -28,7 +28,7 @@ public class Main {
                     m.load();
                     break;
                 case 6:
-                    System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+                    System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½");
                     return;
             }
         }
