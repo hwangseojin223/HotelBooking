@@ -190,9 +190,9 @@ public class Manager{
             ArrayList<Room>loadArr = (ArrayList<Room>) ois.readObject();
             for(Room r : loadArr){
                 if (r instanceof StandardRoom){
-
+                        r.show();
                 }else if (r instanceof SuiteRoom){
-
+                    r.show();
                 }
             }
         } catch (Exception e) {
